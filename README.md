@@ -67,10 +67,15 @@ aws-knowledge-centre,https://aws.amazon.com/premiumsupport/knowledge-center
 
 ## Usage
 
+To use the POC, execute the setup script, then the three services sequentially
+
 ```bash
 sh setup.sh
+
 python3 generate-sitemap.py
+
 python3 enter-into-db.py
+
 python3 recommend-from-db.py
 ```
 
