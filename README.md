@@ -65,6 +65,12 @@ healthnavigator,https://www.healthnavigator.org.nz
 aws-knowledge-centre,https://aws.amazon.com/premiumsupport/knowledge-center
 ```
 
+## Usage
+
+$ sh setup.sh
+$ python3 generate-sitemap.py
+$ python3 enter-into-db.py
+$ python3 recommend-from-db.py
 
 ## Ideas
 
