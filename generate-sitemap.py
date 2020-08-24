@@ -1,6 +1,7 @@
 from usp.tree import sitemap_tree_for_homepage
 import json
 import csv
+from os import listdir
 
 #
 # Will generate one file per DOMAIN (not topic)
@@ -53,9 +54,18 @@ def write_to_file(domain, links):
   with open(SITEMAP_FOLDER + '/' + filename, 'w') as fout:
     json.dump(links, fout)
 
+def get_existing_sitemaps():
+  sitemaps = []
+  for f in listdir(SITEMAP_FOLDER):
+    sitemaps.append(f.split('.json')[0])
+  return sitemaps
+
+
 ###################################################
 # MAIN BELOW
 ###################################################
+
+## Append --all to regenerate existing sitemaps
 
 def main():
   # Open the list of topics needing to be processes
@@ -63,10 +73,17 @@ def main():
   with open(filename, newline='') as csvfile:
     reader = csv.reader(csvfile)
 
-    # TODO: Implement functionality for non-unique domains across different topics
-    # e.g. cloudformation and elasticbeanstalk
+    domains_generated = ['']
+    # TODO: Condition to see if the --all flag is NOT SET
+    if True:
+      domains_generated = get_existing_sitemaps()
 
+    # Will not generate duplicate sitemaps
     for row in reader:
-      generate_sitemap(row[1])
+      if strip_domain(row[1]) not in domains_generated:
+        generate_sitemap(row[1])
+        domains_generated.append(strip_domain(row[1]))
+
+    #print(domains_generated)
 
 main()

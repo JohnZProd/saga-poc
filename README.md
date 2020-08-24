@@ -90,3 +90,5 @@ https://www.mongodb.com/blog/post/getting-started-with-python-and-mongodb
 https://docs.mongodb.com/manual/tutorial/getting-started/
 
 https://ianlondon.github.io/blog/mongodb-auth/
+
+https://flaviocopes.com/go-nginx-reverse-proxy/

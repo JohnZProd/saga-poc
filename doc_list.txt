@@ -1,4 +1,4 @@
-kubernetes,https://kubernetes.io/docs
-docker,https://docs.docker.com
-healthnavigator,https://www.healthnavigator.org.nz
-aws-knowledge-centre,https://aws.amazon.com/premiumsupport/knowledge-center
+kubernetes,https://kubernetes.io/docs,tech
+docker,https://docs.docker.com,tech
+healthnavigator,https://www.healthnavigator.org.nz,healthcare
+aws-knowledge-centre,https://aws.amazon.com/premiumsupport/knowledge-center,tech
