@@ -2,6 +2,7 @@ from usp.tree import sitemap_tree_for_homepage
 import json
 import csv
 from os import listdir
+from strip_domain import strip_domain
 
 #
 # Will generate one file per DOMAIN (not topic)
@@ -39,10 +40,6 @@ def generate_sitemap(domain):
   # Write the links to a file (one for each domain) 
   write_to_file(domain, links)
 
-# Will remove the http(s):// and everything after the first /
-# e.g. https://www.google.com/maps becomes www.google.com
-def strip_domain(domain):
-  return domain.split('://')[1].split('/')[0]
 
 # Write the list of links to a file
 def write_to_file(domain, links):
@@ -54,36 +51,4 @@ def write_to_file(domain, links):
   with open(SITEMAP_FOLDER + '/' + filename, 'w') as fout:
     json.dump(links, fout)
 
-def get_existing_sitemaps():
-  sitemaps = []
-  for f in listdir(SITEMAP_FOLDER):
-    sitemaps.append(f.split('.json')[0])
-  return sitemaps
 
-
-###################################################
-# MAIN BELOW
-###################################################
-
-## Append --all to regenerate existing sitemaps
-
-def main():
-  # Open the list of topics needing to be processes
-  filename = 'doc_list.txt'
-  with open(filename, newline='') as csvfile:
-    reader = csv.reader(csvfile)
-
-    domains_generated = ['']
-    # TODO: Condition to see if the --all flag is NOT SET
-    if True:
-      domains_generated = get_existing_sitemaps()
-
-    # Will not generate duplicate sitemaps
-    for row in reader:
-      if strip_domain(row[1]) not in domains_generated:
-        generate_sitemap(row[1])
-        domains_generated.append(strip_domain(row[1]))
-
-    #print(domains_generated)
-
-main()
