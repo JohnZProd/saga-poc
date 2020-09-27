@@ -1,4 +1,5 @@
 from generate_sitemap import *
+from write_topic_to_db import *
 
 def get_existing_sitemaps():
   sitemaps = []
@@ -20,9 +21,17 @@ def main():
 
         # Will not generate duplicate sitemaps
         for row in reader:
+            topic = row[0]
+            search_domain = row[1]
+            stripped_domain = strip_domain(row[1])
+
+            print("Reading topic: ",row[0],", \tdomain: ", row[1], "\tstripped domain: ", strip_domain(row[1]))
             if strip_domain(row[1]) not in domains_generated:
                 generate_sitemap(row[1])
                 domains_generated.append(strip_domain(row[1]))
+            
+            # TODO: Implement
+            write_topic_to_db(topic, search_domain, stripped_domain)
 
 if __name__ == "__main__":
     main()
