@@ -42,13 +42,25 @@ Holds all the valid links along with the associated topics. Note that links can 
 
 This requires an additional step by the sitemaps by domain function
 
+Links table
 ```json
 {
-    "url":"",
-    "domain":"",
-    "topic": "",
-    "reads":"",
-    "recommends": ""
+    "url":"string",
+    "domain":"string",
+    "topic": "string",
+    "reads":"string",
+    "recommends": int
+}
+```
+
+Topics table
+```json
+{
+    "topic": "string",
+    "search_domain":"string",
+    "last_updated": "timestamp",
+    "currently_updating" bool,
+    "category": "string"
 }
 ```
 
