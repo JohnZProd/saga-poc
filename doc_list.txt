@@ -3,4 +3,3 @@ docker,https://docs.docker.com,tech
 healthnavigator,https://www.healthnavigator.org.nz,healthcare
 aws-knowledge-centre,https://aws.amazon.com/premiumsupport/knowledge-center,tech
 devops.com,https://devops.com/category/blogs,tech
-aws-ec2,https://docs.aws.amazon.com/AWSEC2/latest/UserGuide,tech
