@@ -7,6 +7,7 @@ Currently, I have the following documentation domains available
 * kubernetes
 * healthnavigator
 * aws-knowledge-center
+* devops.com
 
 Upon selection, the app will recommend a random piece of documentation from the domain and you will be able to answer Y or N if you would like to read it in full.
 
@@ -21,8 +22,6 @@ The working version of the app is made up of services and sources of data
 #### Sitemap Scraper
 
 Given a list of domains (from knowledge-repo), will provide a full list of available links (i.e. sitemap) available on the domain for each domain
-
-#### Link processor
 
 Given a list of topic (from knowledge-repo), will filter out the invalid links before inserting valid links into the Link Database
 
@@ -71,6 +70,7 @@ kubernetes,https://kubernetes.io/docs
 docker,https://docs.docker.com,
 healthnavigator,https://www.healthnavigator.org.nz
 aws-knowledge-centre,https://aws.amazon.com/premiumsupport/knowledge-center
+devops.com,https://devops.com/category/blogs,tech
 ```
 
 ## Usage
