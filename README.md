@@ -1,17 +1,17 @@
 # Saga - A Proof of Concept
 
-This is a proof-of-concept for the Saga application. A CLI based web-service that allows you to learn a random topic by recommending a random piece of documentation to you given a topic.
+This is a higher level overview for the Saga application, a CLI based web-service that allows you to learn a random topic by retrieving a random piece of documentation from the internet to you based on a topic that you specify
 
-Currently, I have the following documentation domains available
+Currently, I have the following documentation topics available
 * docker 
 * kubernetes
 * healthnavigator
 * aws-knowledge-center
 * devops.com
 
-Upon selection, the app will recommend a random piece of documentation from the domain and you will be able to answer Y or N if you would like to read it in full.
+Upon selection of a topic, the app will recommend a random piece of documentation from the list of available documentation links and you will be able to answer Y or N if you would like to read it in full. If you select Y, the app will open that link in your browser.
 
-Once again, please note that this is merely a proof of concept and is not intended as anything close to the final working version of the app.
+The repository mainly holds the doc_list.txt
 
 ## Terminology, Concepts, Architecture
 
