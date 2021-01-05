@@ -91,6 +91,10 @@ A local CLI application that interacts with the recommender API
 
 Development is in progress for two different architectures of the application stack. You may read more and see their automation YAMLs in their respective Github repos.
 
+#### saga-ra1
+
+(Development only) All components run on one machine
+
 #### saga-ra2
 
 New topics, and sitemap scraper components are run as ECS tasks in AWS.
